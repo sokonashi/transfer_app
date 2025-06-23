@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>振替記録</title>
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="manifest" href="manifest.json">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#4CAF50">
+</head>
+<body>
+  <h1>振替記録</h1>
+
+  <form id="recordForm">
+    <label>生徒：<input type="text" id="reason" required></label><br>
+    <label>元の日付：<input type="date" id="fromDate" required></label><br>
+    <label>振替先日付：<input type="date" id="toDate" required></label><br>
+    <button type="submit">登録</button>
+  </form>
+
+  <h2>記録一覧</h2>
+  <table id="recordTable">
+    <thead>
+      <tr>
+        <th>生徒</th>
+        <th>元日付</th>
+        <th>振替先</th>
+        <th>完了</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <script src="script.js"></script>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js')
+        .then(() => console.log('Service Worker registered'))
+        .catch(err => console.error('SW registration failed:', err));
+    }
+  </script>
+</body>
+</html>

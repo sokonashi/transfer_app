@@ -1,0 +1,71 @@
+body {
+  font-family: sans-serif;
+  margin: 30px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 15px;
+}
+
+form {
+  margin-bottom: 20px;
+}
+
+form input, form button {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 20px;
+  font-size: 0.95rem;
+}
+
+th, td {
+  padding: 8px;
+  border: 1px solid #aaa;
+  text-align: center;
+  word-break: break-word;
+}
+
+@media (max-width: 480px) {
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+
+  thead {
+    display: none;
+  }
+
+  tr {
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #f9f9f9;
+  }
+
+  td {
+    text-align: left;
+    padding-left: 50%;
+    position: relative;
+  }
+
+  td::before {
+    position: absolute;
+    left: 10px;
+    width: 45%;
+    white-space: nowrap;
+    font-weight: bold;
+  }
+
+  td:nth-child(1)::before { content: "生徒"; }
+  td:nth-child(2)::before { content: "元日付"; }
+  td:nth-child(3)::before { content: "振替先"; }
+  td:nth-child(4)::before { content: "完了"; }
+}
